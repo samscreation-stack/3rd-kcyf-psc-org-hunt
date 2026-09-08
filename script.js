@@ -27,6 +27,8 @@ const submitButton = document.getElementById("submitButton");
 
 const statusBox = document.getElementById("statusBox");
 
+const loadingOverlay = document.getElementById("loadingOverlay");
+
 
 
 /* =========================================================
@@ -587,6 +589,17 @@ if (form) {
             }
 
 
+            /* Show loading overlay */
+
+            if (loadingOverlay) {
+
+                loadingOverlay.classList.add(
+                    "visible"
+                );
+
+            }
+
+
             try {
 
 
@@ -735,6 +748,15 @@ if (form) {
                     "Submission error:",
                     error
                 );
+
+
+                if (loadingOverlay) {
+
+                    loadingOverlay.classList.remove(
+                        "visible"
+                    );
+
+                }
 
 
                 showStatus(

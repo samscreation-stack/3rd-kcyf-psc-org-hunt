@@ -2000,5 +2000,111 @@ textarea {
 
 
 /* =========================================================
+   SUBMIT LOADING OVERLAY
+   ========================================================= */
+
+.loading-overlay {
+
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(17, 24, 28, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+}
+
+.loading-overlay.visible {
+
+    display: flex;
+    opacity: 1;
+
+}
+
+.loading-card {
+
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+
+    padding: 40px 48px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    text-align: center;
+
+    max-width: 320px;
+
+    animation: loadingPop 0.3s ease;
+
+}
+
+@keyframes loadingPop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+.loading-spinner {
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    border: 4px solid var(--primary-light);
+    border-top-color: var(--primary);
+
+    animation: loadingSpin 0.8s linear infinite;
+
+}
+
+@keyframes loadingSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.loading-text {
+
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--black);
+
+    letter-spacing: 0.2px;
+
+}
+
+.loading-subtext {
+
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
    END
    ========================================================= */
