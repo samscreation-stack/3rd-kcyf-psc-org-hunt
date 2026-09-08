@@ -1385,6 +1385,22 @@ textarea {
     font-size: 14px;
 }
 
+.spam-note {
+
+    font-size: 12.5px !important;
+
+    color: var(--muted);
+
+    opacity: 0.8;
+
+    margin-top: -2px !important;
+}
+
+.gmail-cta {
+
+    margin-top: 18px;
+}
+
 .thank-actions {
 
     display: flex;
