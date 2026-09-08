@@ -629,10 +629,25 @@ if (form) {
                             .trim(),
 
                     phone:
-                        document
-                            .getElementById("phone")
-                            .value
-                            .trim(),
+                        (function () {
+
+                            const codeEl =
+                                document.getElementById("phoneCode");
+
+                            const numberEl =
+                                document.getElementById("phone");
+
+                            const code =
+                                codeEl ? codeEl.value : "";
+
+                            const number =
+                                numberEl
+                                    ? numberEl.value.trim().replace(/^0+/, "")
+                                    : "";
+
+                            return code + number;
+
+                        })(),
 
                     email:
                         document
