@@ -9,7 +9,7 @@
    ========================================================= */
 
 const SUBMISSION_ENDPOINT =
-    "https://script.google.com/macros/s/AKfycbzYWsXyEqoNp6wY-TuCGS387Ihp6_1-BK2nt712eM3AcWGpnc4U31EBqAXLsE1KfRJG/exec";
+    "https://script.google.com/macros/s/AKfycbwukUbeWibJf6siOa5pn0tlp5IXXBbWZmWZqrhIPC7iBmvnVLAq35rPHFLcjgOgAvc/exec";
 
 
 /* =========================================================
