@@ -429,15 +429,69 @@ function fileToBase64(file) {
 
         reader.onload = function () {
 
-            resolve({
+            const img = new Image();
 
-                data: reader.result,
+            img.onload = function () {
 
-                name: file.name,
+                /* Resize so the longest side is at most 1200px.
+                   Keeps the photo clearly readable for ID/records
+                   while cutting upload size drastically. */
 
-                type: file.type
+                const MAX_DIMENSION = 1200;
 
-            });
+                let width = img.width;
+                let height = img.height;
+
+                if (width > height && width > MAX_DIMENSION) {
+                    height = Math.round(height * (MAX_DIMENSION / width));
+                    width = MAX_DIMENSION;
+                } else if (height > MAX_DIMENSION) {
+                    width = Math.round(width * (MAX_DIMENSION / height));
+                    height = MAX_DIMENSION;
+                }
+
+                const canvas = document.createElement("canvas");
+                canvas.width = width;
+                canvas.height = height;
+
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, width, height);
+
+                /* Re-encode as JPEG at 80% quality regardless of
+                   original format — much smaller than PNG, and
+                   plenty sharp for this use case. */
+
+                const compressedData = canvas.toDataURL(
+                    "image/jpeg",
+                    0.8
+                );
+
+                const newName =
+                    file.name.replace(/\.[^.]+$/, "") + ".jpg";
+
+                resolve({
+
+                    data: compressedData,
+
+                    name: newName,
+
+                    type: "image/jpeg"
+
+                });
+
+            };
+
+            img.onerror = function () {
+
+                reject(
+                    new Error(
+                        "Could not read the photo."
+                    )
+                );
+
+            };
+
+            img.src = reader.result;
 
         };
 
