@@ -10,7 +10,7 @@
 
 const SUBMISSION_ENDPOINT =
     "https://script.google.com/macros/s/AKfycbxkqvVpVGQ6N5M5sNl2QgOtjDKoesTKHsKNqJEavQyZQewU8eW0A0_Kb7Sf5TJBTmF6/exec";
-
+    
 /* =========================================================
    2. GET FORM ELEMENTS
    ========================================================= */
