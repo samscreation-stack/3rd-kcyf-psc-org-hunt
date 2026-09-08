@@ -400,6 +400,15 @@ h4 {
     transform: translateY(-1px);
 }
 
+.btn-gmail {
+    background: rgb(224, 3, 3);
+    color: var(--white);
+}
+.btn-gmail:hover {
+    background: rgb(0, 0, 0);
+    color: var(--off-white);
+}
+
 
 /* =========================================================
    07 — HERO
