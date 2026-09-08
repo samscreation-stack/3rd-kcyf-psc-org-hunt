@@ -70,14 +70,14 @@ if (photoInput) {
         /* Check file size */
 
         const maxSize =
-            2 * 1024 * 1024; // 2 MB
+            5 * 1024 * 1024; // 5 MB
 
         if (file.size > maxSize) {
 
             photoInput.value = "";
 
             showStatus(
-                "Your photo must be smaller than 2 MB.",
+                "Your photo must be smaller than 5 MB.",
                 "error"
             );
 
