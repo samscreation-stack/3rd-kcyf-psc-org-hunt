@@ -2620,41 +2620,59 @@ textarea {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
 
     width: 100%;
+    height: 34px;
+
+    z-index: 9999;
+
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
 
     background: #fff5f5;
 
-    border-bottom: 1px solid #f1c3c3;
+    border-bottom: 1px solid #efcaca;
 
     color: #c62828;
 
     white-space: nowrap;
 }
 
+
 .thankyou-marquee-track {
-    width: max-content;
+    flex: none;
 
     display: flex;
     align-items: center;
+
+    width: max-content;
+
     gap: 55px;
 
-    padding: 7px 0;
-
     animation:
-        thankyouMarquee 22s linear infinite;
+        thankyouMarquee 24s linear infinite;
+
+    will-change: transform;
 }
 
+
 .thankyou-marquee-track span {
-    flex: 0 0 auto;
+    flex: none;
+
+    display: inline-block;
+
+    margin: 0;
 
     font-size: 11px;
     font-weight: 700;
 
-    letter-spacing: 0.01em;
+    line-height: 1;
+
+    white-space: nowrap;
 }
+
 
 .thankyou-marquee-track .bn {
     font-size: 11px;
@@ -2662,52 +2680,57 @@ textarea {
 }
 
 
-/* continuous right → left movement */
+/* RIGHT → LEFT */
 
 @keyframes thankyouMarquee {
 
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
 
     to {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 
 }
 
 
-/* give the thank-you page room for the fixed strip */
+/* Make space below the fixed notice */
 
 .thankyou {
-    padding-top: 70px;
+    padding-top: 82px;
 }
 
 
-/* mobile */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
+
+    .thankyou-marquee {
+        height: 30px;
+    }
 
     .thankyou-marquee-track {
-        gap: 40px;
+        gap: 35px;
 
-        padding: 6px 0;
+        animation-duration: 20s;
     }
 
     .thankyou-marquee-track span {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .thankyou-marquee-track .bn {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .thankyou {
-        padding-top: 64px;
+        padding-top: 68px;
     }
 
 }
-
 
 /* =========================================================
    END
