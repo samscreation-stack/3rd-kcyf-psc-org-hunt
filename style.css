@@ -2612,6 +2612,102 @@ textarea {
     display: none;
 }
 
+/* =========================================================
+   THANK YOU — MOVING EMAIL NOTICE
+   ========================================================= */
+
+.thankyou-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    overflow: hidden;
+
+    background: #fff5f5;
+
+    border-bottom: 1px solid #f1c3c3;
+
+    color: #c62828;
+
+    white-space: nowrap;
+}
+
+.thankyou-marquee-track {
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+    gap: 55px;
+
+    padding: 7px 0;
+
+    animation:
+        thankyouMarquee 22s linear infinite;
+}
+
+.thankyou-marquee-track span {
+    flex: 0 0 auto;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.01em;
+}
+
+.thankyou-marquee-track .bn {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* continuous right → left movement */
+
+@keyframes thankyouMarquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* give the thank-you page room for the fixed strip */
+
+.thankyou {
+    padding-top: 70px;
+}
+
+
+/* mobile */
+
+@media (max-width: 420px) {
+
+    .thankyou-marquee-track {
+        gap: 40px;
+
+        padding: 6px 0;
+    }
+
+    .thankyou-marquee-track span {
+        font-size: 10px;
+    }
+
+    .thankyou-marquee-track .bn {
+        font-size: 10px;
+    }
+
+    .thankyou {
+        padding-top: 64px;
+    }
+
+}
+
 
 /* =========================================================
    END
