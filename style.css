@@ -1298,22 +1298,24 @@ textarea {
    ========================================================= */
 
 .thankyou {
-
     min-height:
         calc(100vh - 72px);
 
-    display: grid;
+    display: flex;
 
-    place-items: center;
+    align-items: center;
+
+    justify-content: center;
 
     padding: 32px 0;
 }
 
 .thank-card {
-
     width: 100%;
-
     max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
 
     padding: 32px 22px;
 
