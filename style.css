@@ -144,10 +144,8 @@ h4 {
    ========================================================= */
 
 .container {
-    width: min(
-        var(--max-width),
-        calc(100% - 32px)
-    );
+    width: min(var(--max-width),
+            calc(100% - 32px));
 
     margin-inline: auto;
 }
@@ -191,7 +189,7 @@ h4 {
 /* Navigation card */
 
 .nav {
-    min-height: 68px;
+    min-height: 78px;
 
     display: flex;
     align-items: center;
@@ -232,7 +230,7 @@ h4 {
 
 /* KCYF logo */
 
-.brand > img:first-child {
+.brand>img:first-child {
     width: 52px;
     height: 52px;
 
@@ -281,14 +279,12 @@ h4 {
 /* Event text logo */
 
 .brand .event-logo {
+    height: 65px;
     width: auto;
-    height: 50px;
-    max-width: 400px;
-    object-fit: contain;
+    max-width: 320px;
 
     flex-shrink: 0;
 }
-
 
 /* Navigation button */
 
@@ -404,6 +400,7 @@ h4 {
     background: rgb(224, 3, 3);
     color: var(--white);
 }
+
 .btn-gmail:hover {
     background: rgb(0, 0, 0);
     color: var(--off-white);
@@ -507,11 +504,9 @@ h4 {
     color: var(--black);
 
     font-size:
-        clamp(
-            42px,
+        clamp(42px,
             11vw,
-            76px
-        );
+            76px);
 
     line-height: 1.04;
 
@@ -691,11 +686,9 @@ h4 {
     color: var(--black);
 
     font-size:
-        clamp(
-            30px,
+        clamp(30px,
             7vw,
-            46px
-        );
+            46px);
 
     letter-spacing: -0.035em;
 }
@@ -812,11 +805,9 @@ h4 {
     border-radius: var(--radius-xl);
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #11181c,
-            #1e2a2f
-        );
+            #1e2a2f);
 
     color: var(--white);
 }
@@ -829,11 +820,9 @@ h4 {
     color: var(--white);
 
     font-size:
-        clamp(
-            30px,
+        clamp(30px,
             7vw,
-            44px
-        );
+            44px);
 
     letter-spacing: -0.035em;
 }
@@ -894,11 +883,9 @@ h4 {
     color: var(--black);
 
     font-size:
-        clamp(
-            36px,
+        clamp(36px,
             9vw,
-            58px
-        );
+            58px);
 
     letter-spacing: -0.045em;
 }
@@ -997,8 +984,7 @@ textarea:focus {
     border-color: var(--primary);
 
     box-shadow:
-        0 0 0 4px
-        rgba(0, 217, 255, 0.10);
+        0 0 0 4px rgba(0, 217, 255, 0.10);
 }
 
 textarea {
@@ -1093,8 +1079,7 @@ textarea {
     background: var(--primary-light);
 
     box-shadow:
-        0 0 0 3px
-        rgba(0, 217, 255, 0.08);
+        0 0 0 3px rgba(0, 217, 255, 0.08);
 }
 
 .experience-option:has(input:disabled) {
@@ -1218,7 +1203,7 @@ textarea {
     background: var(--off-white);
 }
 
-.privacy-consent > input[type="checkbox"] {
+.privacy-consent>input[type="checkbox"] {
 
     margin-top: 4px;
 }
@@ -1373,11 +1358,9 @@ textarea {
     color: var(--black);
 
     font-size:
-        clamp(
-            38px,
+        clamp(38px,
             9vw,
-            58px
-        );
+            58px);
 
     letter-spacing: -0.045em;
 }
@@ -1462,17 +1445,13 @@ textarea {
 
     background:
 
-        radial-gradient(
-            circle at 12% 10%,
+        radial-gradient(circle at 12% 10%,
             rgba(0, 217, 255, 0.10),
-            transparent 28%
-        ),
+            transparent 28%),
 
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #10181c 0%,
-            #162328 100%
-        );
+            #162328 100%);
 
     color:
         rgba(255, 255, 255, 0.72);
@@ -1525,12 +1504,10 @@ textarea {
     background: #ffffff;
 
     border:
-        1px solid
-        rgba(255, 255, 255, 0.12);
+        1px solid rgba(255, 255, 255, 0.12);
 
     box-shadow:
-        0 12px 28px
-        rgba(0, 0, 0, 0.18);
+        0 12px 28px rgba(0, 0, 0, 0.18);
 }
 
 .footer-logo-card img {
@@ -1650,8 +1627,7 @@ textarea {
     padding: 8px 12px;
 
     border:
-        1px solid
-        rgba(255, 255, 255, 0.09);
+        1px solid rgba(255, 255, 255, 0.09);
 
     border-radius: 14px;
 
@@ -1725,8 +1701,7 @@ textarea {
         18px 0 22px;
 
     border-top:
-        1px solid
-        rgba(255, 255, 255, 0.09);
+        1px solid rgba(255, 255, 255, 0.09);
 
     color:
         rgba(255, 255, 255, 0.36);
@@ -1744,10 +1719,8 @@ textarea {
     .container {
 
         width:
-            min(
-                var(--max-width),
-                calc(100% - 48px)
-            );
+            min(var(--max-width),
+                calc(100% - 48px));
     }
 
 
@@ -1779,8 +1752,7 @@ textarea {
     .hero-grid {
 
         grid-template-columns:
-            minmax(0, 1.05fr)
-            minmax(350px, 0.95fr);
+            minmax(0, 1.05fr) minmax(350px, 0.95fr);
     }
 
 
@@ -1829,8 +1801,7 @@ textarea {
     .footer-main {
 
         grid-template-columns:
-            minmax(0, 1.3fr)
-            minmax(280px, 0.7fr);
+            minmax(0, 1.3fr) minmax(280px, 0.7fr);
 
         align-items: start;
 
@@ -1910,10 +1881,8 @@ textarea {
     .container {
 
         width:
-            min(
-                var(--max-width),
-                calc(100% - 24px)
-            );
+            min(var(--max-width),
+                calc(100% - 24px));
     }
 
 
@@ -1939,7 +1908,7 @@ textarea {
         gap: 8px;
     }
 
-    .brand > img:first-child {
+    .brand>img:first-child {
 
         width: 46px;
         height: 46px;
@@ -1954,22 +1923,22 @@ textarea {
         height: 22px;
     }
 
-   .brand .event-logo {
-    height: 36px;
-    max-width: 180px;
+    .brand .event-logo {
+        height: 42px;
+        max-width: 210px;
 
-    flex-shrink: 0;
-}
+        flex-shrink: 0;
+    }
 
-   .nav-link {
-    min-height: 38px;
+    .nav-link {
+        min-height: 38px;
 
-    padding: 0 11px;
+        padding: 0 11px;
 
-    font-size: 11px;
+        font-size: 11px;
 
-    flex-shrink: 0;
-}
+        flex-shrink: 0;
+    }
 
 
     /* Hero */
@@ -2013,7 +1982,7 @@ textarea {
 @media (max-width: 360px) {
 
     .brand .event-logo {
-        height: 32px;
+        height: 38px;
         max-width: 150px;
     }
 
@@ -2050,8 +2019,7 @@ textarea {
     border-color: var(--primary);
 
     box-shadow:
-        0 0 0 4px
-        rgba(0, 217, 255, 0.10);
+        0 0 0 4px rgba(0, 217, 255, 0.10);
 
 }
 
@@ -2208,6 +2176,438 @@ textarea {
     font-weight: 500;
     color: var(--muted);
 
+}
+
+/* =========================================================
+   PROGRAMME BANNER 01
+   ========================================================= */
+
+.programme-banner {
+
+    padding: 0 0 52px;
+
+}
+
+
+/* clickable banner */
+
+.programme-banner-link {
+
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: var(--black);
+
+    box-shadow:
+        0 18px 45px rgba(17, 24, 28, 0.10);
+
+}
+
+
+/* banner image */
+
+.programme-banner-image {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 500ms cubic-bezier(0.22,
+            1,
+            0.36,
+            1);
+}
+
+
+/* dark gradient over the image */
+
+.programme-banner-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.42),
+            rgba(0, 0, 0, 0.02) 55%,
+            transparent);
+
+    pointer-events: none;
+}
+
+
+/* small programme label */
+
+.programme-banner-tag {
+
+    padding: 7px 11px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.24);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.10em;
+
+    text-transform: uppercase;
+}
+
+
+/* arrow */
+
+.programme-banner-arrow {
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: var(--black);
+
+    font-size: 18px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* hover */
+
+.programme-banner-link:hover .programme-banner-image {
+
+    transform: scale(1.025);
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 720px) {
+
+    .programme-banner {
+
+        padding:
+            0 0 70px;
+
+    }
+
+    .programme-banner-link {
+
+        border-radius: 26px;
+
+    }
+
+    .programme-banner-overlay {
+
+        padding: 24px;
+
+    }
+
+    .programme-banner-arrow {
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 20px;
+
+    }
+
+}
+
+/* =========================================================
+   COMPACT NOTICE BAR
+   ========================================================= */
+
+.notice-bar {
+    padding: 8px 0 18px;
+}
+
+
+.notice-box {
+    min-height: 66px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 8px 10px 8px 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    background:
+        var(--white);
+
+    box-shadow:
+        0 7px 22px rgba(17, 24, 28, 0.045);
+}
+
+
+/* ---------- LABEL ---------- */
+
+.notice-label {
+    flex: 0 0 auto;
+
+    padding: 6px 8px;
+
+    border-radius: 8px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary-dark);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+}
+
+
+/* ---------- VIEWPORT ---------- */
+
+.notice-window {
+    position: relative;
+
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* ---------- NOTICE ---------- */
+
+.notice-item {
+    display: none;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+.notice-item.active {
+    display: flex;
+}
+
+
+.notice-item time {
+    flex: 0 0 auto;
+
+    color: var(--primary-dark);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+
+    white-space: nowrap;
+}
+
+
+.notice-content {
+    min-width: 0;
+}
+
+
+.notice-content h3 {
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--black);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.notice-content h3 .bn {
+    color: var(--muted);
+
+    font-size: 0.9em;
+
+    font-weight: 500;
+}
+
+
+.notice-content p {
+    margin: 1px 0 0;
+
+    overflow: hidden;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.35;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ---------- CONTROLS ---------- */
+
+.notice-controls {
+    flex: 0 0 auto;
+
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.notice-control {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 0;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: var(--white);
+
+    color: var(--black);
+
+    font-size: 12px;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+
+.notice-control:hover {
+    background: var(--black);
+
+    color: var(--white);
+
+    border-color: var(--black);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .notice-bar {
+        padding:
+            4px 0 14px;
+    }
+
+    .notice-box {
+        min-height: 60px;
+
+        gap: 9px;
+
+        padding:
+            7px 7px 7px 10px;
+
+        border-radius: 14px;
+    }
+
+    .notice-label {
+        padding:
+            5px 6px;
+
+        font-size: 8px;
+    }
+
+    .notice-item {
+        gap: 8px;
+    }
+
+    .notice-content h3 {
+        font-size: 11px;
+    }
+
+    .notice-content p {
+        font-size: 9px;
+    }
+
+    .notice-control {
+        width: 26px;
+        height: 26px;
+
+        font-size: 11px;
+    }
+
+}
+
+.notice-bar[hidden] {
+    display: none;
 }
 
 

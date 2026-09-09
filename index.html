@@ -89,6 +89,53 @@
 
     <main>
 
+<!-- =====================================================
+     NOTICE BAR
+     Hidden until there is an actual notice.
+     ===================================================== -->
+
+<section class="notice-bar" id="noticeBar" hidden>
+
+    <div class="container">
+
+        <div class="notice-box">
+
+            <div class="notice-label">
+                NOTICE
+            </div>
+
+            <div class="notice-window" id="noticeWindow">
+                <!-- Notices will be added here later -->
+            </div>
+
+            <div class="notice-controls">
+
+                <button
+                    type="button"
+                    class="notice-control"
+                    id="noticePrev"
+                    aria-label="Previous notice"
+                >
+                    ←
+                </button>
+
+                <button
+                    type="button"
+                    class="notice-control"
+                    id="noticeNext"
+                    aria-label="Next notice"
+                >
+                    →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+        
 
         <!-- =================================================
              HERO
@@ -206,6 +253,43 @@
 
         </section>
 
+        <!-- =====================================================
+     PROGRAMME BANNER 01
+     ===================================================== -->
+
+<section class="programme-banner">
+
+    <div class="container">
+
+        <a
+            href="#"
+            class="programme-banner-link"
+            aria-label="Open programme banner"
+        >
+
+            <img
+                src="asset/banner-01.png"
+                alt="Public Speaking Programme"
+                class="programme-banner-image"
+            >
+
+            <div class="programme-banner-overlay">
+
+                <span class="programme-banner-tag">
+                    PROGRAMME 01
+                </span>
+
+                <span class="programme-banner-arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
 
 
         <!-- =================================================
@@ -824,8 +908,11 @@
 
     </div>
 
-</footer>
+    </footer>
 
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 

@@ -10,7 +10,7 @@
 
 const SUBMISSION_ENDPOINT =
     "https://script.google.com/macros/s/AKfycbyG5fMWYIfAf5ze1-svpFw4_P6q6qRTLIOdzZGmkTNF5o5N9d8_guDNyvdpzf4MIiHZ/exec";
-    
+
 /* =========================================================
    2. GET FORM ELEMENTS
    ========================================================= */
@@ -373,29 +373,29 @@ function validateForm() {
 
     });
 
-const experienceSelected =
-    document.querySelectorAll(
-        'input[name="experience"]:checked'
-    ).length > 0;
+    const experienceSelected =
+        document.querySelectorAll(
+            'input[name="experience"]:checked'
+        ).length > 0;
 
-const experienceError =
-    document.getElementById("experienceError");
+    const experienceError =
+        document.getElementById("experienceError");
 
-if (!experienceSelected) {
+    if (!experienceSelected) {
 
-    isValid = false;
+        isValid = false;
 
-    if (experienceError) {
-        experienceError.style.display = "block";
+        if (experienceError) {
+            experienceError.style.display = "block";
+        }
+
+    } else {
+
+        if (experienceError) {
+            experienceError.style.display = "none";
+        }
+
     }
-
-} else {
-
-    if (experienceError) {
-        experienceError.style.display = "none";
-    }
-
-}
 
     return isValid;
 }
@@ -607,7 +607,7 @@ if (form) {
 
                 const photoFile =
                     photoInput &&
-                    photoInput.files
+                        photoInput.files
                         ? photoInput.files[0]
                         : null;
 
@@ -668,15 +668,15 @@ if (form) {
                             .trim(),
 
                     experience:
-    Array.from(
-        document.querySelectorAll(
-            'input[name="experience"]:checked'
-        )
-    )
-    .map(function (checkbox) {
-        return checkbox.value;
-    })
-    .join(", "),
+                        Array.from(
+                            document.querySelectorAll(
+                                'input[name="experience"]:checked'
+                            )
+                        )
+                            .map(function (checkbox) {
+                                return checkbox.value;
+                            })
+                            .join(", "),
 
                     motivation:
                         document
@@ -823,5 +823,206 @@ if (thankName) {
             ", " + submittedName;
 
     }
+
+}
+
+/* =========================================================
+   NOTICE SYSTEM
+   ========================================================= */
+
+const notices = [
+
+    {
+        date: "09 SEP",
+        title: "3rd KCYF Public Speaking Carnival Organizer Hunt 2026 Started",
+        bengali: "3rd KCYF Public Speaking Carnival Organizer Hunt 2026 শুরু হয়েছে",
+        summary: "FB post done · Insta post done · LinkedIn post done"
+    }
+
+    /*
+    Example:
+
+    {
+        date: "08 SEP",
+        title: "Public Speaking Workshop",
+        bengali: "পাবলিক স্পিকিং ওয়ার্কশপ",
+        summary: "120 attended · 86 participants · 18 organizers"
+    }
+
+    Add notices here later.
+    */
+];
+
+
+const noticeBar =
+    document.getElementById("noticeBar");
+
+const noticeWindow =
+    document.getElementById("noticeWindow");
+
+const previousNotice =
+    document.getElementById("noticePrev");
+
+const nextNotice =
+    document.getElementById("noticeNext");
+
+
+let currentNotice = 0;
+
+
+function renderNotices() {
+
+    /* No notices = hide entire section */
+
+    if (
+        !notices.length ||
+        !noticeBar ||
+        !noticeWindow
+    ) {
+
+        if (noticeBar) {
+            noticeBar.hidden = true;
+        }
+
+        return;
+    }
+
+
+    /* Show notice bar */
+
+    noticeBar.hidden = false;
+
+
+    /* Create notices */
+
+    noticeWindow.innerHTML =
+        notices.map(function (notice, index) {
+
+            return `
+                <article
+                    class="notice-item ${index === 0 ? "active" : ""}"
+                >
+
+                    <time>
+                        ${notice.date}
+                    </time>
+
+                    <div class="notice-content">
+
+                        <h3>
+
+                            ${notice.title}
+
+                            ${notice.bengali
+                    ? `
+                                    <span class="bn">
+                                        · ${notice.bengali}
+                                    </span>
+                                  `
+                    : ""
+                }
+
+                        </h3>
+
+                        <p>
+                            ${notice.summary}
+                        </p>
+
+                    </div>
+
+                </article>
+            `;
+
+        }).join("");
+
+
+    currentNotice = 0;
+
+}
+
+
+function showNotice(index) {
+
+    const items =
+        document.querySelectorAll(
+            ".notice-item"
+        );
+
+
+    if (!items.length) {
+        return;
+    }
+
+
+    items.forEach(function (item) {
+
+        item.classList.remove("active");
+
+    });
+
+
+    items[index].classList.add("active");
+
+    currentNotice = index;
+
+}
+
+
+function goToNextNotice() {
+
+    const next =
+        (currentNotice + 1) %
+        notices.length;
+
+    showNotice(next);
+
+}
+
+
+function goToPreviousNotice() {
+
+    const previous =
+        (
+            currentNotice -
+            1 +
+            notices.length
+        ) % notices.length;
+
+    showNotice(previous);
+
+}
+
+
+if (nextNotice) {
+
+    nextNotice.addEventListener(
+        "click",
+        goToNextNotice
+    );
+
+}
+
+
+if (previousNotice) {
+
+    previousNotice.addEventListener(
+        "click",
+        goToPreviousNotice
+    );
+
+}
+
+
+renderNotices();
+
+
+/* Auto rotate only when there are multiple notices */
+
+if (notices.length > 1) {
+
+    setInterval(
+        goToNextNotice,
+        5000
+    );
 
 }
