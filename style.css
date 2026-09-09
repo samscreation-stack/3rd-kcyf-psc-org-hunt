@@ -2616,5 +2616,135 @@ textarea {
 
 
 /* =========================================================
+   EMAIL NOTIFICATION MARQUEE (thank-you.html only)
+   ========================================================= */
+
+.sr-only {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+.notice-strip {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1100;
+
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+
+    background: #fdf5f5;
+
+    border-bottom: 1px solid rgba(178, 58, 58, 0.12);
+
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+
+.notice-strip__track {
+
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    white-space: nowrap;
+
+    animation: noticeStripScroll 26s linear infinite;
+
+    will-change: transform;
+}
+
+.notice-strip__item {
+
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    padding-right: 4px;
+
+    white-space: nowrap;
+
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+
+    color: #a3403d;
+}
+
+@keyframes noticeStripScroll {
+
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+
+}
+
+body.has-notice-strip {
+
+    padding-top: 32px;
+}
+
+body.has-notice-strip .site-header {
+
+    top: 32px;
+}
+
+
+@media (max-width: 640px) {
+
+    .notice-strip {
+        height: 29px;
+    }
+
+    .notice-strip__item {
+        font-size: 11px;
+    }
+
+    body.has-notice-strip {
+        padding-top: 29px;
+    }
+
+    body.has-notice-strip .site-header {
+        top: 29px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .notice-strip__track {
+        animation-duration: 60s;
+    }
+
+}
+
+
+/* =========================================================
    END
    ========================================================= */
