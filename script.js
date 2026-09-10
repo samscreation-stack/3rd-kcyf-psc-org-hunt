@@ -1026,3 +1026,67 @@ if (notices.length > 1) {
     );
 
 }
+
+
+/* =========================================================
+   INSTRUCTIONS POPUP (register.html)
+   ========================================================= */
+
+const instructionsModal = document.getElementById(
+    "instructionsModal"
+);
+
+if (instructionsModal) {
+
+    const modalClose = document.getElementById(
+        "modalClose"
+    );
+
+    const modalGotIt = document.getElementById(
+        "modalGotIt"
+    );
+
+    function closeInstructionsModal() {
+
+        instructionsModal.classList.remove(
+            "visible"
+        );
+
+    }
+
+    instructionsModal.classList.add(
+        "visible"
+    );
+
+    if (modalClose) {
+
+        modalClose.addEventListener(
+            "click",
+            closeInstructionsModal
+        );
+
+    }
+
+    if (modalGotIt) {
+
+        modalGotIt.addEventListener(
+            "click",
+            closeInstructionsModal
+        );
+
+    }
+
+    instructionsModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target === instructionsModal) {
+
+                closeInstructionsModal();
+
+            }
+
+        }
+    );
+
+}

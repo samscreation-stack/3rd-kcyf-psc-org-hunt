@@ -37,6 +37,88 @@
 
 
     <!-- =====================================================
+         INSTRUCTIONS POPUP
+         ===================================================== -->
+
+    <div id="instructionsModal" class="modal-overlay">
+
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+            <button
+                type="button"
+                id="modalClose"
+                class="modal-close"
+                aria-label="Close"
+            >
+                &times;
+            </button>
+
+            <div class="modal-important" id="modalTitle">
+                IMPORTANT
+            </div>
+
+            <div class="modal-flow">
+
+                <div class="modal-step">
+                    <span class="modal-step-num">1</span>
+                    <div class="modal-step-text">
+                        <p>Fill and submit this form.</p>
+                        <p class="bn">এই ফর্মটি পূরণ করে জমা দিন।</p>
+                    </div>
+                </div>
+
+                <div class="modal-arrow">↓</div>
+
+                <div class="modal-step">
+                    <span class="modal-step-num">2</span>
+                    <div class="modal-step-text">
+                        <p>Check your email inbox for a message from <strong>knockingcollaborators@gmail.com</strong>.</p>
+                        <p class="bn">knockingcollaborators@gmail.com থেকে একটি ইমেইলের জন্য আপনার ইনবক্স চেক করুন।</p>
+                    </div>
+                </div>
+
+                <div class="modal-arrow">↓</div>
+
+                <div class="modal-step">
+                    <span class="modal-step-num">3</span>
+                    <div class="modal-step-text">
+                        <p>Not in inbox? Check Promotions or Spam folder.</p>
+                        <p class="bn">ইনবক্সে না পেলে Promotions বা Spam ফোল্ডার চেক করুন।</p>
+                    </div>
+                </div>
+
+                <div class="modal-arrow">↓</div>
+
+                <div class="modal-step">
+                    <span class="modal-step-num">4</span>
+                    <div class="modal-step-text">
+                        <p>Click <strong>Confirm on WhatsApp</strong> in the email, then send the pre-filled message.</p>
+                        <p class="bn">ইমেইলে <strong>Confirm on WhatsApp</strong>-এ ক্লিক করুন, তারপর প্রি-ফিল্ড মেসেজটি সেন্ড করুন।</p>
+                    </div>
+                </div>
+
+                <div class="modal-arrow">↓</div>
+
+                <div class="modal-step modal-step-final">
+                    <span class="modal-step-num">5</span>
+                    <div class="modal-step-text">
+                        <p>Our team verifies your message and replies with our official WhatsApp group link.</p>
+                        <p class="bn">আমাদের টিম মেসেজ যাচাই করে অফিসিয়াল WhatsApp group লিংক পাঠাবে।</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="button" id="modalGotIt" class="btn btn-primary modal-gotit">
+                Got it
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
          HEADER
          ===================================================== -->
 

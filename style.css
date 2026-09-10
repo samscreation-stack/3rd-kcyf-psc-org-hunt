@@ -2746,5 +2746,569 @@ body.has-notice-strip .site-header {
 
 
 /* =========================================================
+   INSTRUCTIONS POPUP — PREMIUM MODAL
+   register.html
+   Class names / IDs preserved for JS compatibility
+   ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background:
+        radial-gradient(circle at 50% 20%,
+            rgba(0, 217, 255, 0.08),
+            transparent 38%),
+        rgba(12, 18, 21, 0.68);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    opacity: 0;
+    transition:
+        opacity 0.28s ease,
+        backdrop-filter 0.28s ease;
+}
+
+.modal-overlay.visible {
+    display: flex;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MODAL CONTAINER
+   ========================================================= */
+
+.modal-box {
+    position: relative;
+
+    width: min(100%, 500px);
+    max-height: min(86vh, 720px);
+
+    padding: 38px 30px 28px;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff 0%,
+            #fcfdfd 100%);
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.20),
+        0 8px 24px rgba(0, 0, 0, 0.08);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.18) transparent;
+
+    animation: modalPop 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+
+    isolation: isolate;
+}
+
+
+/* subtle cyan accent at the top */
+
+.modal-box::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 72px;
+    height: 4px;
+
+    transform: translateX(-50%);
+
+    background: var(--primary);
+
+    border-radius: 0 0 999px 999px;
+}
+
+
+/* scrollbar */
+
+.modal-box::-webkit-scrollbar {
+    width: 5px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.16);
+    border-radius: 999px;
+}
+
+.modal-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   MODAL ANIMATION
+   ========================================================= */
+
+@keyframes modalPop {
+
+    0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.965);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.035);
+
+    color: var(--muted);
+
+    font-family: inherit;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.modal-close:hover {
+    background: rgba(0, 217, 255, 0.10);
+    border-color: rgba(0, 217, 255, 0.22);
+    color: var(--black);
+
+    transform: rotate(3deg);
+}
+
+.modal-close:active {
+    transform: scale(0.92);
+}
+
+.modal-close:focus-visible {
+    outline: 3px solid rgba(0, 217, 255, 0.28);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   IMPORTANT TITLE
+   ========================================================= */
+
+.modal-important {
+    position: relative;
+
+    margin: 2px 42px 26px;
+
+    color: var(--black);
+
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.2;
+
+    letter-spacing: 2.4px;
+    text-align: center;
+}
+
+
+/* cyan underline */
+
+.modal-important::after {
+    content: "";
+
+    display: block;
+
+    width: 34px;
+    height: 3px;
+
+    margin: 10px auto 0;
+
+    background: var(--primary);
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   FLOW
+   ========================================================= */
+
+.modal-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   STEP CARD
+   ========================================================= */
+
+.modal-step {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 14px 15px;
+
+    background: #f7f9fa;
+
+    border: 1px solid rgba(0, 0, 0, 0.045);
+    border-radius: 14px;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.modal-step:hover {
+    background: #f3f7f8;
+    border-color: rgba(0, 217, 255, 0.14);
+
+    transform: translateX(2px);
+}
+
+
+/* final step */
+
+.modal-step-final {
+    background:
+        linear-gradient(135deg,
+            rgba(0, 217, 255, 0.10),
+            rgba(0, 217, 255, 0.045));
+
+    border-color: rgba(0, 217, 255, 0.18);
+
+    box-shadow:
+        inset 3px 0 0 var(--primary);
+}
+
+.modal-step-final:hover {
+    background:
+        linear-gradient(135deg,
+            rgba(0, 217, 255, 0.14),
+            rgba(0, 217, 255, 0.06));
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.modal-step-num {
+    position: relative;
+
+    flex: 0 0 30px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: var(--black);
+
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
+
+    box-shadow:
+        0 3px 8px rgba(0, 217, 255, 0.20);
+}
+
+
+/* final number */
+
+.modal-step-final .modal-step-num {
+    background: var(--black);
+    color: var(--white);
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   STEP TEXT
+   ========================================================= */
+
+.modal-step-text {
+    min-width: 0;
+    flex: 1;
+}
+
+.modal-step-text p {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+.modal-step-text p:last-child {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+
+/* email / important inline text */
+
+.modal-step-text strong {
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+
+/* Bengali text */
+
+.modal-step-text .bn {
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   ARROWS
+   ========================================================= */
+
+.modal-arrow {
+    height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(0, 0, 0, 0.28);
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   GOT IT BUTTON
+   ========================================================= */
+
+.modal-gotit {
+    width: 100%;
+
+    margin-top: 22px;
+
+    min-height: 48px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.modal-gotit:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 217, 255, 0.18);
+}
+
+.modal-gotit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .modal-overlay {
+        align-items: flex-end;
+
+        padding: 12px;
+    }
+
+    .modal-box {
+        width: 100%;
+        max-height: 88vh;
+
+        padding: 34px 16px 18px;
+
+        border-radius: 22px;
+    }
+
+    .modal-close {
+        top: 12px;
+        right: 12px;
+
+        width: 34px;
+        height: 34px;
+    }
+
+    .modal-important {
+        margin: 2px 40px 22px;
+
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .modal-flow {
+        gap: 4px;
+    }
+
+    .modal-step {
+        gap: 11px;
+
+        padding: 12px;
+        border-radius: 13px;
+    }
+
+    .modal-step-num {
+        flex-basis: 28px;
+
+        width: 28px;
+        height: 28px;
+    }
+
+    .modal-step-text p {
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+
+    .modal-step-text p:last-child {
+        font-size: 11.5px;
+        line-height: 1.5;
+    }
+
+    .modal-arrow {
+        height: 13px;
+        font-size: 12px;
+    }
+
+    .modal-gotit {
+        min-height: 46px;
+
+        margin-top: 18px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .modal-overlay {
+        padding: 8px;
+    }
+
+    .modal-box {
+        padding-left: 13px;
+        padding-right: 13px;
+
+        border-radius: 19px;
+    }
+
+    .modal-step {
+        gap: 9px;
+        padding: 11px 10px;
+    }
+
+    .modal-step-text p {
+        font-size: 12px;
+    }
+
+    .modal-step-text p:last-child {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .modal-overlay,
+    .modal-box,
+    .modal-close,
+    .modal-step,
+    .modal-gotit {
+        transition: none;
+        animation: none;
+    }
+
+}
+
+
+/* =========================================================
    END
    ========================================================= */
